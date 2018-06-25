@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Tic Tac Toe Game</title>
+<style type="text/css">
+#borda {
+border: 10px double black;
+padding: 25px;
+background: url(paper.gif);
+background-repeat: no-repeat;
+background-origin: padding-box;}
+}
+#borda2 {
+ border: 10px double black;
+ padding: 25px;
+ background: url(paper.gif);
+ background-repeat: no-repeat;
+ background-origin: padding-box; }
+
+body  {
+   background-image: url("rapimg.jpg");
+   background-color: #cccccc;}
+header {
+    color: black;
+    text-shadow: 1px 1px #2d0047;
+    text-align: center; 
+    font-family: Lucida Sans Unicode;
+    font-size: 20px;}
+.h1{ width: 400px;
+height: 100px;
+background: #FF69B4;
+font-size: 80px;
+color: #0000CD;
+cursor: pointer;
+text-align: center;}
+.h2{background: #000066;
+text-align: center;}
+.button { background-image: url("fundobotao.jpg");
+color: white;
+padding: 200px 500px;
+text-align: center;
+display: inline-block;
+font-size: 18px;
+margin: 5px 3px;
+cursor: pointer;}
+table, td, th {    
+border: 10px solid #FF00FF;
+text-align: center;}
+table { border-collapse: collapse; width: 30%;}th, td {padding: 50px;}
+
+
+</style><script language="JavaScript" type="text/javascript">
+caractere = "X"; 
+function joga(espaço){ espaçoclicado = document.getElementById(espaço).innerHTML;
+if (espaçoclicado == "X" || espaçoclicado == "O"){ alert("Começa o jogo denovo ou escolha outro espaço"); }else{
+       document.getElementById(espaço).innerHTML = caractere;
+      		if (caractere == "X"){
+          		caractere = "O";}else{ caractere = "X";}
+}
+}
+
+function verif(){
+  r1 = document.getElementById('espaço11').innerHTML;
+  	r2 = document.getElementById('espaço12').innerHTML;
+  		r3 = document.getElementById('espaço13').innerHTML;
+  			r10 = document.getElementById('espaço21').innerHTML;
+  				r11 = document.getElementById('espaço22').innerHTML;
+  					r12 = document.getElementById('espaço23').innerHTML;
+ 						 r21 = document.getElementById('espaço31').innerHTML;
+  							r22 = document.getElementById('espaço32').innerHTML;
+  								r23 = document.getElementById('espaço33').innerHTML;
+
+
+
+
+
+if (((r1 != '') && (r2 != '') && (r3 != '') && (r1 == r2) && (r2 == r3))
+
+|| ((r1 != '') && (r2 != '') && (r23 != '') && (r11 == r12) && (r12 == r23))
+
+ || ((r1 != '') && (r10 != '') && (r21 != '') && (r11 == r10) && (r10 == r21)) 
+
+  || ((r10 != '') && (r12 != '') && (r13 != '') && (r21 == r12) && (r12 == r13)) 
+
+   || ((r21 != '') && (r22 != '') && (r23 != '') && (r21 == r32) && (r22 == r23)) 
+
+    || ((r12 != '') && (r12 != '') && (r22 != '') && (r12 == r12) && (r12 == r22)) 
+
+     || ((r13 != '') && (r13 != '') && (r23 != '') && (r13 == r13) && (r13 == r23)) 
+
+      || ((r13 != '') && (r12 != '') && (r13 != '') && (r21 == r12) && (r12 == r13))){
+alert('Vitória! Se tiver coragem jogue denovo!');novo();}
+}
+
+function novo(){
+location.reload();
+}
+    
+
+
+
+</script>
+ 
+</head>
+<body>
+<div><header>Tic Tac Toe Game by Marcelo!</header>></div>
+
+<table width="100" class="h2">
+<tr><td align="center" valign="middle" id="espaço1" class="h1" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="espaço2" class="h1" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="espaço3" class="h1" onclick="joga(this.id);verif();"></td>
+</tr>
+<tr><td align="center" valign="middle" id="espaço10" class="h1" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="espaço11" class="h1" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="espaço12" class="h1" onclick="joga(this.id);verif();"></td>
+</tr>
+<tr><td align="center" valign="middle" id="espaço21" class="h1" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="espaço22" class="h1" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="espaço23" class="h1" onclick="joga(this.id);verif();"></td> </tr> </table>
+<button class="button" onclick="novo();" />Play New Game! </button><p><br> </body> </html>
